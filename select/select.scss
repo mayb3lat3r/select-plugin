@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$sel-h: 50px;
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  &:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+.some-block {
+  width: 25rem;
+  height: $sel-h;
+}
+
+.selector {
+  width: 100%;
+  border: 2px solid black;
+
+  user-select: none;
+  cursor: pointer;
+
+  &__head {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $sel-h;
+    border-bottom: 2px solid black;
+  }
+
+  &__list {
+    position: relative;
+    display: none;
+    max-height: $sel-h*5;
+    overflow-y: auto;
+
+    li:last-child {
+      border-bottom-style: none;
+    }
+  }
+
+  .expand {
+    display: block;
+  }
+
+  &__item {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    height: $sel-h;
+    border-bottom: 1px solid #cccccc;
+
+    transition: 0.1s ease-in;
+  }
+
+  &__item:hover {
+    background-color: dodgerblue;
+    color: #ffffff;
+  }
+
+  &__list:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &__list::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+  }
+
+  &__list::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+}
